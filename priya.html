@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Priya B M | Resume Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:linear-gradient(135deg,#141e30,#243b55);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:18px 8%;
+      background:rgba(0,0,0,0.4);
+      backdrop-filter:blur(10px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav h2{
+      color:#00d4ff;
+      font-size:28px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-size:17px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    nav ul li a:hover{
+      color:#00d4ff;
+    }
+
+    /* SECTION */
+
+    section{
+      min-height:100vh;
+      padding:80px 10%;
+      display:none;
+      animation:fade 0.7s ease;
+    }
+
+    section.active{
+      display:block;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* HOME */
+
+    .home-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:50px;
+    }
+
+    .home-text{
+      flex:1;
+    }
+
+    .home-text h1{
+      font-size:60px;
+      margin-bottom:15px;
+    }
+
+    .home-text h1 span{
+      color:#00d4ff;
+    }
+
+    .typing{
+      font-size:28px;
+      color:#00d4ff;
+      margin-bottom:20px;
+      font-weight:600;
+    }
+
+    .home-text p{
+      line-height:1.9;
+      font-size:18px;
+      color:#ddd;
+      max-width:600px;
+    }
+
+    .buttons{
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      margin-right:15px;
+      border-radius:40px;
+      text-decoration:none;
+      color:white;
+      background:#00d4ff;
+      transition:0.4s;
+      font-weight:600;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:white;
+      color:#111;
+    }
+
+    /* PROFILE IMAGE */
+
+    .profile{
+      flex:1;
+      text-align:center;
+    }
+
+    .profile img{
+      width:320px;
+      height:320px;
+      border-radius:50%;
+      object-fit:cover;
+      border:8px solid #00d4ff;
+      box-shadow:0 0 40px rgba(0,212,255,0.5);
+      animation:float 3s infinite ease-in-out;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-15px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* CARDS */
+
+    .card{
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(15px);
+      border-radius:25px;
+      padding:35px;
+      margin-bottom:30px;
+      box-shadow:0 0 20px rgba(0,0,0,0.2);
+    }
+
+    h2{
+      color:#00d4ff;
+      margin-bottom:20px;
+      font-size:32px;
+    }
+
+    h3{
+      margin-top:25px;
+      margin-bottom:10px;
+      color:white;
+    }
+
+    p, li{
+      color:#ddd;
+      line-height:1.8;
+      font-size:17px;
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    /* SKILLS */
+
+    .skill{
+      margin-bottom:20px;
+    }
+
+    .skill-name{
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    .bar{
+      background:#333;
+      height:12px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    .progress{
+      height:100%;
+      background:#00d4ff;
+      border-radius:10px;
+    }
+
+    /* SOCIAL ICONS */
+
+    .social-icons{
+      margin-top:25px;
+    }
+
+    .social-icons a{
+      color:white;
+      font-size:24px;
+      margin-right:18px;
+      transition:0.3s;
+    }
+
+    .social-icons a:hover{
+      color:#00d4ff;
+      transform:scale(1.2);
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111;
+      color:#aaa;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .home-container{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      .home-text h1{
+        font-size:45px;
+      }
+
+      .profile img{
+        width:250px;
+        height:250px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <h2>Priya BM</h2>
+
+    <ul>
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('education')">Education</a></li>
+      <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HOME PAGE -->
+
+  <section id="home" class="active">
+
+    <div class="home-container">
+
+      <div class="home-text">
+
+        <h1>Hello, I'm <span>Priya B M</span></h1>
+
+        <div class="typing">
+          BCA Student | Web Designer | Programmer
+        </div>
+
+        <p>
+          Passionate about web development, creative UI design,
+          coding and building attractive websites with interactive
+          user experience.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#" class="btn"
+          onclick="showPage('education')">
+          Explore Resume
+          </a>
+
+          <a href="#" class="btn">
+          Download CV
+          </a>
+
+        </div>
+
+        <!-- SOCIAL MEDIA ICONS -->
+
+        <div class="social-icons">
+
+          <a href="#"><i class="fab fa-instagram"></i></a>
+
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+
+          <a href="#"><i class="fab fa-github"></i></a>
+
+          <a href="#"><i class="fab fa-twitter"></i></a>
+
+        </div>
+
+      </div>
+
+      <!-- PROFILE IMAGE -->
+
+      <div class="profile">
+
+        <img src="file_00000000fb6471fabc159e20883d4aea.jpg" alt="profile photo">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EDUCATION PAGE -->
+
+  <section id="education">
+
+    <div class="card">
+
+      <h2>Education</h2>
+
+      <h3>BCA</h3>
+
+      <p>City engineering college</p>
+
+      <p>2025 - Present</p>
+
+      <h3>Known Languages</h3>
+
+      <ul>
+        <li>Kannada</li>
+        <li>English</li>
+        <li>Hindi</li>
+        <li>Telugu</li>
+      </ul>
+
+    </div>
+
+    <!-- SKILLS -->
+
+    <div class="card">
+
+      <h2>Technical Skills</h2>
+
+      <div class="skill">
+        <div class="skill-name">HTML</div>
+        <div class="bar">
+          <div class="progress" style="width:95%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">CSS</div>
+        <div class="bar">
+          <div class="progress" style="width:90%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">JavaScript</div>
+        <div class="bar">
+          <div class="progress" style="width:75%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Python</div>
+        <div class="bar">
+          <div class="progress" style="width:70%"></div>
+        </div>
+      </div>
+
+      <a href="#" class="btn"
+      onclick="showPage('projects')">
+      Next Page
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECT PAGE -->
+
+  <section id="projects">
+
+    <div class="card">
+
+      <h2>Projects</h2>
+
+      <ul>
+        <li>Resume Website using HTML CSS & JavaScript</li>
+
+        <li>Image Slide Show using Circular Linked List</li>
+
+        <li>Personal Portfolio Website</li>
+
+        <li>Interactive Web Design Projects</li>
+        
+        <li>real - time chat app</li>
+
+        <li>E- commerce platform</li>
+     </ul>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Achievements</h2>
+
+      <ul>
+        <li>Participated in Technical Presentation</li>
+
+        <li>Improved Front-End Development Skills</li>
+
+        <li>Created Responsive Website Designs</li>
+      </ul>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Career Objective</h2>
+
+      <p>
+        To build a successful career in the IT industry by improving
+        my technical knowledge and communication skills while
+        contributing to innovative projects and organizational growth.
+      </p>
+
+      <a href="#" class="btn"
+      onclick="showPage('home')">
+      Back To Home
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Priya B M | Resume Portfolio Website
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function showPage(pageId){
+
+      let sections = document.querySelectorAll("section");
+
+      sections.forEach(section => {
+        section.classList.remove("active");
+      });
+
+      document.getElementById(pageId).classList.add("active");
+    }
+
+  </script>
+
+</body>
+</html>
